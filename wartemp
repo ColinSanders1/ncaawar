@@ -1,0 +1,18 @@
+#WAR = (Batting Runs + Base Running Runs + Fielding Runs + Positional Adjustment + League Adjustment +Replacement Runs) / (Runs Per Win)
+
+#Batting Runs = wRAA + (lgR/PA – (PF*lgR/PA))*PA + (lgR/PA – (AL or NL non-pitcher wRC/PA))*PA
+#Base Running runs = wSB = SB * runSB + CS * runCS – lgwSB * (1B + BB + HBP – IBB)
+lgwSB = (lgSB * .2 + lgCS * runCS) / (lg1B + lgBB + lgHBP – lgIBB)
+runCS = 2 x RunsPerOut + 0.075
+#Fielding runs?
+#Positional adjustment = 
+Catcher: +4.32 runs (all are per 56 defensive games)
+First Base: -4.32 runs
+Second Base: +.86 runs
+Third Base: +.86 runs
+Shortstop: +2.59 runs
+Left Field: -2.59 runs
+Center Field: +.86 runs
+Right Field: -2.59 runs
+Designated Hitter: -6.04 runs
+# 
