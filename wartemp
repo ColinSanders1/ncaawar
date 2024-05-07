@@ -16,3 +16,18 @@ Center Field: +.86 runs
 Right Field: -2.59 runs
 Designated Hitter: -6.04 runs
 # 
+
+
+
+library(rvest) 
+webpage <- read_html("https://en.wikipedia.org/wiki/\ 
+                List_of_countries_by_GDP_(PPP)_per_capita") 
+  
+# Select the table using CSS selector 
+table_node <- html_nodes(webpage, "table") 
+  
+# Extract the table content 
+table_content <- html_table(table_node)[[2]] 
+  
+# Print the table 
+head(table_content)
